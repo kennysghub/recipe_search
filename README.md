@@ -7,17 +7,9 @@ This is a client-side recipe search application that allows users to search for 
 -Limit the number of search results to 8
 - Mobile-friendly responsive design
 
-## Getting Started
-Prerequisites
-- Node.js (version X.X.X)
-- npm (version X.X.X) or Yarn (version X.X.X)
-Installation
-Clone the repository:
-```
-git clone https://github.com/your-username/recipe-search.git
-```
-Navigate to client directory
+## Getting Started 
 
+Navigate to client directory
 ```
 cd client/
 ```
@@ -31,14 +23,34 @@ Start the development server:
 ```
 npm run dev
 ```
-Open your browser and visit http://localhost:3000 to view the application.
+Open your browser and visit http://localhost:5173 to view the application.
 
-## Usage
+### Usage
 1. Enter a recipe name, select a difficulty level, and/or choose a total time range in the search form.
 2. Click the "Search" button to submit the search query.
 3. The search results will be displayed in a grid layout below the search form.
 4. The first item in the search results is considered the "Featured Recipe" and takes up more space than the other results.
 5. If no results are found, a message will be displayed indicating that no results were found.
+
+
+### Tech Stack
+- The application is built using React, TypeScript, and Vite.
+- The styling is implemented using Material-UI components and custom CSS.
+
+### Project Structure
+
+- `client/`: The main source code directory of the application.  
+  - `components/`: Contains reusable React components used in the application.
+    - `RecipeCard.tsx`: Represents a single recipe card in the search results.
+    - `SearchForm.tsx`: Provides the search form functionality for recipes.
+  - `pages/`: Contains the main pages or views of the application.
+    - `HomePage.tsx`: The main page component that displays the search form and recipe results.
+  - `services/`: Contains services or utility functions used in the application.
+    - `api.ts`: Handles API requests to fetch recipe data from the external endpoint.
+  - `types/`: Contains type definitions.
+    - `index.ts`: Exports custom types used in the application, such as **Recipe** and **SearchParams**.
+
+---
 
 ### Accessibility Considerations
 To make the search page more accessible, the following approaches can be considered:
@@ -62,20 +74,3 @@ In this implementation, the search parameters are not passed through the URL. Ho
 3. Trigger the search functionality with the extracted parameters to display the initial search results.
 4. Update the URL parameters whenever the search form is submitted to reflect the current search criteria.
 5. This approach allows for sharing and bookmarking search results by copying the URL with the search parameters included.
-
-### Tech Stack
-- The application is built using React and TypeScript.
-- The styling is implemented using Material-UI components and custom CSS.
-
-### Project Structure
-
-- `client/`: The main source code directory of the application.  
-  - `components/`: Contains reusable React components used in the application.
-    - `RecipeCard.tsx`: Represents a single recipe card in the search results.
-    - `SearchForm.tsx`: Provides the search form functionality for recipes.
-  - `pages/`: Contains the main pages or views of the application.
-    - `HomePage.tsx`: The main page component that displays the search form and recipe results.
-  - `services/`: Contains services or utility functions used in the application.
-    - `api.ts`: Handles API requests to fetch recipe data from the external endpoint.
-  - `types/`: Contains type definitions.
-    - `index.ts`: Exports custom types used in the application, such as **Recipe** and **SearchParams**.
