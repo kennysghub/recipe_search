@@ -2,7 +2,7 @@ import React from "react";
 import { searchRecipes } from "../services/api";
 import SearchForm from "../components/SearchForm";
 import RecipeCard from "../components/RecipeCard";
-import { Recipe } from "../types";
+import { Recipe } from "../types/types";
 import { Grid } from "@mui/material";
 
 const HomePage: React.FC = () => {

@@ -1,49 +1,5 @@
-// import axios from "axios";
-// import { Recipe, SearchParams } from "../types";
-
-// const API_URL = "https://dummyjson.com/recipes";
-
-// export const searchRecipes = async (params: SearchParams): Promise<Recipe[]> => {
-//   try {
-//     const response = await axios.get(API_URL, { params });
-//     const recipes = response.data.recipes as Recipe[];
-
-//     // Filter recipes based on search criteria
-//     const filteredRecipes = recipes.filter((recipe) => {
-//       const totalTime = recipe.prepTimeMinutes + recipe.cookTimeMinutes;
-
-//       if (params.name && !recipe.name.toLowerCase().includes(params.name.toLowerCase())) {
-//         return false;
-//       }
-
-//       if (params.difficulty && recipe.difficulty !== params.difficulty) {
-//         return false;
-//       }
-
-//       if (params.totalTime) {
-//         if (params.totalTime === "less than 15" && totalTime >= 15) {
-//           return false;
-//         }
-//         if (params.totalTime === "15-30" && (totalTime < 15 || totalTime > 30)) {
-//           return false;
-//         }
-//         if (params.totalTime === "more than 30" && totalTime <= 30) {
-//           return false;
-//         }
-//       }
-
-//       return true;
-//     });
-
-//     // Limit the number of results to 8
-//     return filteredRecipes.slice(0, 8);
-//   } catch (error) {
-//     console.error("Error fetching recipes:", error);
-//     return [];
-//   }
-// };
 import axios from "axios";
-import { Recipe, SearchParams } from "../types";
+import { Recipe, SearchParams } from "../types/types";
 
 const API_URL = import.meta.env.VITE_API_URL || "https://dummyjson.com/recipes";
 
