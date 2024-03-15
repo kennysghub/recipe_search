@@ -1,4 +1,6 @@
 import React from "react";
+
+/* ----------------------- Material-UI styling imports ---------------------- */
 import { Button, Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
@@ -14,6 +16,7 @@ interface SearchFormProps {
 }
 
 const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
+  /* --------------- State variables to store form input values --------------- */
   const [name, setName] = React.useState("");
   const [difficulty, setDifficulty] = React.useState("");
   const [totalTime, setTotalTime] = React.useState("");
@@ -34,6 +37,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Box display="flex" flexDirection={{ xs: "column", sm: "row" }} alignItems="center" gap={2}>
+        {/* --------------- Render the text input field for recipe name -------------- */}
         <TextField
           color="primary"
           id="outlined-helperText"
@@ -43,6 +47,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
           fullWidth
           sx={{ mb: { xs: 2, sm: 1 } }}
         />
+
+        {/* ------------ Render the select drop-down button for difficulty ----------- */}
         <FormControl sx={{ minWidth: 120, mb: { xs: 2, sm: 0 } }}>
           <InputLabel id="difficulty-label">Difficulty</InputLabel>
           <Select
@@ -62,6 +68,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
             ))}
           </Select>
         </FormControl>
+
+        {/* ------------ Render the select drop-down button for total time ----------- */}
         <FormControl sx={{ minWidth: 120, mb: { xs: 2, sm: 0 } }}>
           <InputLabel id="total-time-label">Total Time</InputLabel>
           <Select
@@ -81,6 +89,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
             ))}
           </Select>
         </FormControl>
+
+        {/* ------------------------ Render the search button ------------------------ */}
         <Button
           size="small"
           color="primary"
